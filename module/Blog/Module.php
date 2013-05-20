@@ -8,6 +8,7 @@ use Blog\Model\Comments;
 use Blog\Model\CommentsTable;
 use Blog\Model\Categories;
 use Blog\Model\CategoriesTable;
+use Blog\Model\Post\PostMapper;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -72,7 +73,13 @@ class Module
                      $resultSetPrototype = new ResultSet();
                      $resultSetPrototype->setArrayObjectPrototype(new Comments());
                      return new TableGateway('comments', $dbAdapter, null, $resultSetPrototype);
+                 },
+                 'PostMapper' => function($sm){
+                     $postMapper =  new PostMapper();
+                     $postMapper->setDbAdapter($sm->get('dbAdapter'));
+                     return $postMapper;
                  }
+
              )
          );
     }

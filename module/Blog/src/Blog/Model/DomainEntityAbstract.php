@@ -6,7 +6,7 @@
  * Time: 8:26 PM
  * To change this template use File | Settings | File Templates.
  */
-namespace Blog/Model;
+namespace Blog\Model;
 
 class DomainEntityAbstract {
     protected $id;
@@ -17,7 +17,7 @@ class DomainEntityAbstract {
         return $this->id;
     }
 
-    static function getCollection($type){
+    static function getCollection(){
         return array();
     }
 

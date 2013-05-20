@@ -8,7 +8,8 @@ return array(
         'Admin',
         'Authorize',
         'BjyProfiler',
-        'RelyAuth'
+        'RelyAuth',
+        'ZfcBase'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

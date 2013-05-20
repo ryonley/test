@@ -42,7 +42,7 @@ class IsAllowed extends AbstractPlugin
         $acl->addResource(new Resource('Blog'));
         $acl->addResource(new Resource('addPost'), 'Blog');
         $acl->addResource(new Resource('RelyAuth'));
-        
+
          // ASSIGN ADMIN RESOURCE AND PRIVILEGES
         $acl->addResource(new Resource('Admin'));
         $acl->addResource(new Resource('index'), 'Admin');

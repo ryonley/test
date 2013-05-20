@@ -4,6 +4,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Blog\Controller\Blog' => 'Blog\Controller\BlogController',
+            'Blog\Controller\Test' => 'Blog\Controller\TestController'
         ),
     ),
     
@@ -45,6 +46,16 @@ return array(
                 
                
     ),
+     'test' => array(
+         'type' => 'Zend\Mvc\Router\Http\Literal',
+         'options' => array(
+             'route' => '/test',
+             'defaults' => array(
+                 'controller' => 'Blog\Controller\Test',
+                 'action' => 'index'
+             ),
+         ),
+     ),
             
     'addpost' => array(
             'type' => 'Zend\Mvc\Router\Http\Literal',

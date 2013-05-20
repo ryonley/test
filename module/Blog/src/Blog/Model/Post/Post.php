@@ -1,14 +1,15 @@
 <?php
-namespace Blog\Models\Post;
+namespace Blog\Model\Post;
 
 use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\Session\Container as SessionContainer;
+use Blog\Model\DomainEntityAbstract as DomainEntityAbstract;
 
 
-class Post extends \Blog\DomainEntityAbstract implements InputFilterAwareInterface
+class Post extends DomainEntityAbstract implements InputFilterAwareInterface
 {
 
     public $ID;
@@ -76,7 +77,7 @@ class Post extends \Blog\DomainEntityAbstract implements InputFilterAwareInterfa
         $comment->setPost($this);
     }
 
-    
+
 
 
 
