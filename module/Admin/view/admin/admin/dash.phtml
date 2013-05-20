@@ -1,0 +1,27 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'Dashboard';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+
+
+
+
+
+<?php
+
+if(isset($messages)) {
+    foreach($messages as $message) {
+        echo "<p>$message</p>";
+    }
+}
+
+
+if(isset($identity)){
+    echo "<p>You are logged in as $identity</p>";
+}
+
+?>

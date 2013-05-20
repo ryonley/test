@@ -1,0 +1,23 @@
+<?php
+
+
+$title = "Edit Post";
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+
+
+
+
+
+<?php
+
+$form ->setAttribute('action', "/edit-post/$id");
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+
+?>
