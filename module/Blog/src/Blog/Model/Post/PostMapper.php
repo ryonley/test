@@ -21,7 +21,7 @@ class PostMapper extends AbstractDbMapper
             $result = $this->insert($post);
             $post->setId($result->getGeneratedValue());
         } else {
-            $where = 'id = ' . (int)$post->getId();
+            $where = 'ID = ' . (int)$post->getId();
             $this->update($post, $where);
         }
     }
@@ -37,6 +37,8 @@ class PostMapper extends AbstractDbMapper
         $select = $this->getSelect($this->tableName)
             ->where(array('ID' => (int)$id));
 
-        return $this->select($select)->current();
+        $obj =  $this->select($select)->current();
+       // $comment_collection =
+        $obj->setComments($comment_collection);
     }
 }

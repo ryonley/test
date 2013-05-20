@@ -15,9 +15,14 @@ class TestController extends AbstractActionController {
     public function indexAction(){
         $sm = $this->getServiceLocator();
         $postMapper = $sm->get('PostMapper');
-        $post = $postMapper->loadById('1');
+        $post = $postMapper->fetchAll();
+        /*
         echo "<pre>";
         print_r($post);
         echo "</pre>";
+        */
+        foreach ($post as $p){
+            echo $p->post_title;
+        }
     }
 }
